@@ -7,7 +7,7 @@ type PageHeroProps = {
 export function PageHero({ title, description, eyebrow }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-hero pt-28 text-white">
-      <div className="mesh-bg absolute inset-0 opacity-30" />
+      <div className="knit-sketch-pattern absolute inset-0 opacity-40 pointer-events-none" />
       <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-blue/25 blur-3xl" />
       <div className="absolute -left-16 bottom-0 h-48 w-48 rounded-full bg-green/15 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-5 pb-16">

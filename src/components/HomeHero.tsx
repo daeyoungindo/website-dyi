@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { heroSlides, siteConfig } from "@/data/site";
+import { useLanguage } from "@/context/LanguageContext";
+import { heroSlides } from "@/data/site";
 
 export function HomeHero() {
   const [index, setIndex] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -17,6 +19,7 @@ export function HomeHero() {
 
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-hero text-white">
+      <div className="knit-sketch-pattern absolute inset-0 opacity-40 z-10 pointer-events-none" />
       {heroSlides.map((slide, i) => (
         <div
           key={slide.src}
@@ -41,26 +44,26 @@ export function HomeHero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-32">
         <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
-          {siteConfig.name}
+          {t.site.name}
         </p>
         <h1 className="animate-fade-up mt-4 max-w-[15ch] font-display text-4xl font-extrabold tracking-[-0.02em] sm:text-5xl md:text-6xl lg:text-7xl">
-          {siteConfig.tagline}
+          {t.site.tagline}
         </h1>
         <p className="animate-fade-up mt-5 max-w-[56ch] text-base text-white/90 md:text-lg">
-          {siteConfig.description}
+          {t.site.description}
         </p>
         <div className="animate-fade-up mt-8 flex flex-wrap gap-3">
           <Link
             href="/produk"
             className="inline-flex items-center rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
           >
-            Lihat produk
+            {t.home.viewProducts}
           </Link>
           <Link
             href="/kontak"
             className="inline-flex items-center rounded-full border-2 border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            Hubungi kami
+            {t.home.contactUs}
           </Link>
         </div>
       </div>
