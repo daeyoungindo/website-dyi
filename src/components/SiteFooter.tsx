@@ -38,10 +38,24 @@ export function SiteFooter() {
             Kontak
           </p>
           <div className="mt-4 space-y-2 text-sm text-white/80">
-            <p>{siteConfig.contact.note}</p>
-            <Link href="/kontak" className="inline-block text-blue hover:underline">
-              Halaman kontak
-            </Link>
+            <p className="leading-relaxed">{siteConfig.contact.address}</p>
+            <p>
+              <span className="text-white/55">Email:</span>{" "}
+              <a href={`mailto:${siteConfig.contact.email}`} className="text-blue hover:underline">
+                {siteConfig.contact.email}
+              </a>
+            </p>
+            <p>
+              <span className="text-white/55">Telp:</span>{" "}
+              <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white">
+                {siteConfig.contact.phone}
+              </a>
+            </p>
+            <div className="pt-2">
+              <Link href="/kontak" className="inline-block text-blue hover:underline">
+                Halaman kontak &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </div>

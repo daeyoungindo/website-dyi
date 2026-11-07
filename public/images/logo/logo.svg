@@ -1,24 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-label="DYI HWASEUNG">
-  <rect width="640" height="220" rx="18" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="DYI HWASEUNG">
   <text
-    x="320"
-    y="92"
-    text-anchor="middle"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="78"
-    font-weight="700"
-    letter-spacing="6"
-    fill="#6b7280"
+    x="540"
+    y="82"
+    text-anchor="end"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="86"
+    font-weight="900"
+    letter-spacing="8"
+    fill="#ffffff"
+    stroke="#000000"
+    stroke-width="3.5"
+    paint-order="stroke fill"
   >DYI</text>
   <text
-    x="320"
-    y="175"
-    text-anchor="middle"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="64"
-    font-weight="800"
+    x="540"
+    y="168"
+    text-anchor="end"
+    font-family="Arial Black, Arial, Helvetica, sans-serif"
+    font-size="58"
+    font-weight="900"
     font-style="italic"
-    letter-spacing="2"
-    fill="#1e4f8c"
+    letter-spacing="1"
+    fill="#3b82f6"
+    stroke="#3b82f6"
+    stroke-width="2.5"
+    paint-order="stroke fill"
   >HWASEUNG</text>
 </svg>

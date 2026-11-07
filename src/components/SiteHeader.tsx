@@ -41,7 +41,7 @@ export function SiteHeader() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href);
+                : pathname === item.href || pathname.startsWith(item.href + "/");
             return (
               <Link
                 key={item.href}
@@ -72,15 +72,25 @@ export function SiteHeader() {
       {open ? (
         <div className="border-t border-white/10 bg-hero px-5 py-4 lg:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
-            {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {mainNav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href || pathname.startsWith(item.href + "/");
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`rounded-lg px-3 py-2 text-sm transition ${
+                    active
+                      ? "bg-blue text-white font-semibold"
+                      : "text-white/90 hover:bg-white/10"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       ) : null}

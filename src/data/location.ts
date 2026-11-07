@@ -23,9 +23,4 @@ export const location = {
       body: "PCI, PWI, PBB, HWI, HWP, PWJ, TSH, PT Adonia, PRB, PGD, PGS, PKI. Lokasi SJI dalam rencana.",
     },
   ],
-  floorPlan: {
-    src: "/images/lokasi/denah-pabrik.jpg",
-    alt: "Denah pabrik",
-    note: "Klik untuk memperbesar.",
-  },
 };

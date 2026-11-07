@@ -12,17 +12,17 @@ export const siteConfig = {
     "Dae Young Textile memproduksi engineering mesh, sandwich mesh, circular knit, dan tricot dari pabrik di Jawa Tengah, dengan pusat R&D di Korea.",
   year: 2026,
   contact: {
-    address: "Akan diisi oleh perusahaan",
-    email: "sales@daeyoungtextile.example",
-    phone: "+62 XXX XXX XXXX",
-    note: "Alamat pabrik, email sales, dan nomor telepon: akan diisi oleh perusahaan.",
+    address: "Jl. Saptarengga Kawasan Industri Kendal No.7, Tambak, Wonorejo, Kec. Brangsong, Kabupaten Kendal, Jawa Tengah 51372",
+    email: "marketing@daeyoungtex.com",
+    phone: "024-40354777",
+    note: "Silakan hubungi kami melalui email atau telepon untuk konsultasi produk, sampel, dan kunjungan pabrik.",
   },
 };
 
 export const mainNav: NavItem[] = [
   { href: "/", label: "Beranda" },
   { href: "/tentang", label: "Tentang" },
-  { href: "/perjalanan", label: "Perjalanan" },
+  { href: "/milestone", label: "Milestone" },
   { href: "/produk", label: "Produk" },
   { href: "/produksi", label: "Produksi" },
   { href: "/lokasi", label: "Lokasi" },

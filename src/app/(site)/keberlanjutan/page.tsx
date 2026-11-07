@@ -31,20 +31,39 @@ export default function KeberlanjutanPage() {
           title="Penurunan CO₂ terhadap baseline 2020"
           description={sustainability.legend}
         />
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
-          {sustainability.co2.map((item) => (
-            <div
-              key={item.year}
-              className={`rounded-2xl px-4 py-5 text-center ${toneClass[item.tone]}`}
-            >
-              <p className="font-display text-2xl font-bold">
-                {item.value}
-              </p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wide opacity-90">
-                {item.year}
-              </p>
-            </div>
-          ))}
+
+        {/* Responsive CO2 Milestone: Horizontal on wide screens, vertical on mobile */}
+        <div className="mt-10 relative">
+          {/* Desktop horizontal connecting line */}
+          <div className="hidden md:block absolute left-4 right-4 top-1/2 -translate-y-1/2 h-0.5 bg-blue/30 z-0" />
+          {/* Mobile vertical connecting line */}
+          <div className="md:hidden absolute left-4 top-4 bottom-4 w-0.5 bg-blue/30 z-0" />
+
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-2">
+            {sustainability.co2.map((item) => (
+              <div
+                key={item.year}
+                className="relative flex items-center md:flex-col md:items-center gap-4 md:gap-3 pl-10 md:pl-0"
+              >
+                {/* Milestone Node Dot */}
+                <div className="absolute left-2.5 top-1/2 -translate-y-1/2 md:static md:translate-y-0 h-6 w-6 rounded-full border-2 border-blue bg-surface shadow-md flex items-center justify-center shrink-0">
+                  <div className="h-2 w-2 rounded-full bg-blue" />
+                </div>
+                <div
+                  className={`rounded-2xl px-4 py-4 text-center shadow-md w-full md:w-28 transition-all hover:scale-105 ${
+                    toneClass[item.tone]
+                  }`}
+                >
+                  <p className="font-display text-xl font-bold">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide opacity-90">
+                    {item.year}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16">
