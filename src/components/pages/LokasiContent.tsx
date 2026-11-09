@@ -8,6 +8,37 @@ import { location } from "@/data/location";
 export function LokasiContent() {
   const { t } = useLanguage();
 
+  const renderIcon = (index: number) => {
+    switch (index) {
+      case 0:
+        // Pelabuhan / Port (Solid Anchor icon)
+        return (
+          <svg className="w-6 h-6 text-[#2f7fd1]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2a1 1 0 011 1v3.05a7.001 7.001 0 015.93 6.45L19 13h2a1 1 0 110 2h-2.05a7.001 7.001 0 01-13.9 0H3a1 1 0 110-2h2l.07-.5A7.001 7.001 0 0111 6.05V3a1 1 0 011-1zm0 9a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        );
+      case 1:
+        // Bandara / Airport (Solid Airplane icon)
+        return (
+          <svg className="w-6 h-6 text-[#2f7fd1]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+          </svg>
+        );
+      case 2:
+        // Lokasi Tier-1 / Factory (Solid Building icon)
+        return (
+          <svg className="w-6 h-6 text-[#2f7fd1]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 22a1 1 0 01-1-1v-8a1 1 0 011-1h2V6a1 1 0 011-1h4a1 1 0 011 1v2h2V4a1 1 0 011-1h4a1 1 0 011 1v18H2zm4-12H3v6h3v-6zm5 0H8v6h3v-6zm10 0h-3v6h3v-6zm-5-3h-3v9h3V7z" />
+          </svg>
+        );
+      default:
+        return (
+          <svg className="w-6 h-6 text-[#2f7fd1]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+          </svg>
+        );
+    }
+  };
   return (
     <>
       <PageHero
@@ -19,17 +50,15 @@ export function LokasiContent() {
       <section className="mx-auto max-w-6xl space-y-16 px-5 py-20">
         {/* Strategic Logistics Highlights */}
         <div className="grid gap-6 md:grid-cols-3">
-          {t.location.points.map((point, index) => {
-            const icons = ["⚓", "✈️", "🏭"];
-            return (
+          {t.location.points.map((point, index) => (
               <article
                 key={point.title}
                 className="relative overflow-hidden rounded-[2rem] border border-border bg-surface p-8 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-28 h-28 bg-[#2f7fd1]/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="space-y-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2f7fd1]/10 text-xl font-bold text-[#2f7fd1]">
-                    {icons[index] || "📍"}
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2f7fd1]/10">
+                    {renderIcon(index)}
                   </div>
                   <h3 className="font-display text-xl font-bold text-[#17406e]">
                     {point.title}
@@ -43,8 +72,7 @@ export function LokasiContent() {
                   <span>Verified →</span>
                 </div>
               </article>
-            );
-          })}
+          ))}
         </div>
 
         {/* Interactive Map Section */}
