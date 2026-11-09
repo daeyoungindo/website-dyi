@@ -69,12 +69,12 @@ export function TentangContent() {
                     onClick={() => setActivePrinciple(idx)}
                     className={`text-left rounded-2xl border p-4 transition-all duration-200 ${
                       isActive
-                        ? "border-secondary-600 bg-primary-900 text-white shadow-lg scale-[1.02]"
-                        : "border-border bg-surface text-ink hover:border-secondary-600/50 hover:bg-surface/80"
+                        ? "border-[#17406e] bg-[#17406e] text-white shadow-xl scale-[1.02] ring-2 ring-[#2f7fd1]/50"
+                        : "border-border bg-surface text-ink hover:border-[#2f7fd1]/50 hover:bg-surface/90"
                     }`}
                   >
                     <div>
-                      <span className={`text-xs font-semibold ${isActive ? "text-accent-500" : "text-muted"}`}>
+                      <span className={`text-xs font-semibold ${isActive ? "text-[#93c5fd]" : "text-muted"}`}>
                         {item.badge}
                       </span>
                     </div>
