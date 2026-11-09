@@ -97,7 +97,8 @@ export function ProdukContent() {
                     <div className="pt-2 flex flex-wrap items-center gap-4">
                       <Link
                         href={`/kontak?product=${product.id}`}
-                        className="inline-flex items-center gap-2.5 rounded-full bg-[#2f7fd1] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-[#256bb8] hover:shadow-xl"
+                        style={{ color: '#ffffff', backgroundColor: '#2f7fd1' }}
+                        className="inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-bold shadow-lg shadow-blue-500/20 transition hover:opacity-90"
                       >
                         Minta Sampel & Penawaran →
                       </Link>
@@ -154,7 +155,8 @@ export function ProdukContent() {
               <div className="pt-2">
                 <Link
                   href="/kontak"
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#17406e] px-7 py-3.5 text-sm font-bold shadow-lg transition hover:bg-blue-50"
+                  style={{ color: '#17406e', backgroundColor: '#ffffff' }}
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold shadow-lg transition hover:bg-blue-50"
                 >
                   Konsultasi Desain Kustom →
                 </Link>
