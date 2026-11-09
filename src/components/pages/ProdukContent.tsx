@@ -29,10 +29,10 @@ export function ProdukContent() {
           <button
             type="button"
             onClick={() => setActiveTab("all")}
-            className={`rounded-full px-5 py-2.5 text-xs font-semibold transition-all duration-200 ${
+            className={`rounded-full px-5 py-2.5 text-xs font-bold transition-all duration-200 ${
               activeTab === "all"
-                ? "bg-[#17406e] text-white shadow-md"
-                : "bg-surface text-ink border border-border hover:border-[#2f7fd1]/50"
+                ? "bg-[#2f7fd1] text-white shadow-md ring-2 ring-[#17406e]/20"
+                : "bg-surface text-ink border border-border hover:border-[#2f7fd1]"
             }`}
           >
             Semua Produk
@@ -42,10 +42,10 @@ export function ProdukContent() {
               key={item.id}
               type="button"
               onClick={() => setActiveTab(item.id)}
-              className={`rounded-full px-5 py-2.5 text-xs font-semibold transition-all duration-200 ${
+              className={`rounded-full px-5 py-2.5 text-xs font-bold transition-all duration-200 ${
                 activeTab === item.id
-                  ? "bg-[#17406e] text-white shadow-md"
-                  : "bg-surface text-ink border border-border hover:border-[#2f7fd1]/50"
+                  ? "bg-[#2f7fd1] text-white shadow-md ring-2 ring-[#17406e]/20"
+                  : "bg-surface text-ink border border-border hover:border-[#2f7fd1]"
               }`}
             >
               {item.name}
@@ -97,13 +97,13 @@ export function ProdukContent() {
                     <div className="pt-2 flex flex-wrap items-center gap-4">
                       <Link
                         href={`/kontak?product=${product.id}`}
-                        className="inline-flex items-center gap-2 rounded-full bg-[#17406e] px-6 py-3 text-xs font-semibold text-white shadow-md transition hover:bg-[#0f2d4f]"
+                        className="inline-flex items-center gap-2.5 rounded-full bg-[#2f7fd1] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-[#256bb8] hover:shadow-xl"
                       >
                         Minta Sampel & Penawaran →
                       </Link>
                       <Link
                         href="/produksi"
-                        className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-xs font-semibold text-ink transition hover:border-[#2f7fd1] hover:text-[#17406e]"
+                        className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3.5 text-xs font-semibold text-ink transition hover:border-[#2f7fd1] hover:text-[#17406e]"
                       >
                         Lihat Proses Produksi
                       </Link>
@@ -154,7 +154,7 @@ export function ProdukContent() {
               <div className="pt-2">
                 <Link
                   href="/kontak"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#2f7fd1] px-7 py-3 text-xs font-semibold text-white shadow-lg transition hover:brightness-110"
+                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#17406e] px-7 py-3.5 text-sm font-bold shadow-lg transition hover:bg-blue-50"
                 >
                   Konsultasi Desain Kustom →
                 </Link>
