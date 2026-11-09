@@ -19,7 +19,6 @@ export function TentangContent() {
       highlight: "Fast Prototyping & Agile Delivery",
       metric: "< 7 Days",
       metricLabel: "Sample Lead Time",
-      icon: "⚡",
     },
     {
       badge: "02 / SUSTAINABILITY",
@@ -28,7 +27,6 @@ export function TentangContent() {
       highlight: "Circular Economy & Green Manufacturing",
       metric: "100%",
       metricLabel: "Waste Diversion 2025",
-      icon: "🌱",
     },
     {
       badge: "03 / QUALITY",
@@ -37,7 +35,6 @@ export function TentangContent() {
       highlight: "Global Standards & Strict QA",
       metric: "ISO 9001",
       metricLabel: "& FSSC 22000 Certified",
-      icon: "🛡️",
     },
   ];
 
@@ -76,11 +73,10 @@ export function TentangContent() {
                         : "border-border bg-surface text-ink hover:border-secondary-600/50 hover:bg-surface/80"
                     }`}
                   >
-                    <div className="flex items-center justify-between">
+                    <div>
                       <span className={`text-xs font-semibold ${isActive ? "text-accent-500" : "text-muted"}`}>
                         {item.badge}
                       </span>
-                      <span className="text-lg">{item.icon}</span>
                     </div>
                     <h3 className="mt-3 font-display text-lg font-bold">
                       {item.title}
@@ -161,17 +157,17 @@ export function TentangContent() {
 function GlobalNetworkSection() {
   const countries = [
     {
-      flag: "🇰🇷",
+      code: "KR",
       name: "Research & Development (Korea)",
       desc: "Pusat inovasi teknologi benang, engineering mesh, dan desain corak berstandar global.",
     },
     {
-      flag: "🇮🇩",
+      code: "ID",
       name: "Production Hub (Indonesia)",
       desc: "Fasilitas utama di Jawa Tengah dengan kapasitas produksi masif dan komitmen zero waste.",
     },
     {
-      flag: "🇻🇳",
+      code: "VN",
       name: "Supply & Operations (Vietnam)",
       desc: "Jaringan distribusi dan operasional pendukung untuk melayani pasar Asia Tenggara dan global.",
     },
@@ -191,7 +187,9 @@ function GlobalNetworkSection() {
               key={c.name}
               className="rounded-2xl border border-border bg-bg p-6 shadow-sm hover:border-secondary-600/40 transition"
             >
-              <span className="text-2xl">{c.flag}</span>
+              <span className="inline-block rounded bg-secondary-600/10 px-2.5 py-1 text-xs font-bold text-secondary-600">
+                {c.code}
+              </span>
               <h3 className="font-display text-xl font-bold text-primary-900 mt-4">{c.name}</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed">{c.desc}</p>
             </div>
